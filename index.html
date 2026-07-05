@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trivia Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loading-screen" class="loading-screen">
+  <div class="spinner"></div>
+  <p class="loading-text">Loading Trivia Hub...</p>
+</div>
+
+<div class="bg-animation">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+</div>
+
+<div id="confetti-container" class="confetti-container"></div>
+
+<div class="app-container">
+
+  <!-- HOME SCREEN -->
+  <section id="home-screen" class="screen active">
+    <div class="home-content glass-card">
+      <h1 class="app-title">Trivia Hub</h1>
+      <p class="app-subtitle">Test your knowledge across 12 exciting categories and see how you rank!</p>
+      <button id="play-now-btn" class="btn btn-primary btn-large">Play Now</button>
+      <div class="high-score-box">
+        <span class="hs-label">🏆 Best Score</span>
+        <span id="home-high-score">0%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES SCREEN -->
+  <section id="categories-screen" class="screen">
+    <div class="screen-header">
+      <button id="back-home-btn" class="btn-icon">←</button>
+      <h2>Choose a Category</h2>
+    </div>
+    <div class="categories-grid" id="categories-grid"></div>
+  </section>
+
+  <!-- QUIZ SCREEN -->
+  <section id="quiz-screen" class="screen">
+    <div class="quiz-top-bar">
+      <div class="quiz-meta">
+        <span id="category-label" class="category-pill"></span>
+        <span id="question-counter" class="question-counter"></span>
+      </div>
+      <div class="score-box">Score: <span id="score-counter">0</span></div>
+    </div>
+
+    <div class="progress-bar-outer">
+      <div class="progress-bar-inner" id="progress-bar"></div>
+    </div>
+
+    <div class="timer-wrap">
+      <svg class="timer-svg" viewBox="0 0 100 100">
+        <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+        <circle class="timer-fg" id="timer-circle" cx="50" cy="50" r="45"></circle>
+      </svg>
+      <span id="timer-text" class="timer-text">15</span>
+    </div>
+
+    <div class="question-card glass-card" id="question-card">
+      <h3 id="question-text" class="question-text"></h3>
+      <div class="options-grid" id="options-grid"></div>
+    </div>
+  </section>
+
+  <!-- RESULTS SCREEN -->
+  <section id="results-screen" class="screen">
+    <div class="results-content glass-card">
+      <h2 class="results-title">Quiz Complete!</h2>
+      <div class="result-circle">
+        <span id="result-percentage">0%</span>
+      </div>
+      <p id="result-score-text" class="result-score-text"></p>
+      <p id="result-rank" class="rank-text"></p>
+      <div class="result-buttons">
+        <button id="replay-btn" class="btn btn-primary">Play Again</button>
+        <button id="choose-category-btn" class="btn btn-secondary">Choose Category</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
